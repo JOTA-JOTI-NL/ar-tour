@@ -1,0 +1,97 @@
+/* Scouting Nederland Brand Colors */
+:root {
+    --scouting-red: #e2001a;
+    --scouting-blue: #005ea8;
+    --scouting-yellow: #ffdd00;
+    --scouting-green: #009036;
+    --scouting-orange: #f29400;
+    --scouting-purple: #93117e;
+    --scouting-white: #ffffff;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--scouting-blue);
+    color: var(--scouting-white);
+    padding: 25px 30px;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--scouting-yellow);
+}
+
+#loading::before {
+    content: "🏕️";
+    font-size: 32px;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#info {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, rgba(0, 94, 168, 0.95), rgba(0, 94, 168, 0.85));
+    color: var(--scouting-white);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    z-index: 1000;
+    max-width: 300px;
+    border: 2px solid var(--scouting-yellow);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#info > div {
+    margin: 4px 0;
+}
+
+#info > div:first-child {
+    font-weight: bold;
+    color: var(--scouting-yellow);
+}
+
+/* Status colors */
+#status {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#status.status-ready {
+    color: var(--scouting-green);
+}
+
+#status.status-loading {
+    color: var(--scouting-yellow);
+}
+
+#status.status-error {
+    color: var(--scouting-red);
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* Scouting Nederland branded accent animations */
+@keyframes scoutingPulse {
+    0%, 100% { border-color: var(--scouting-yellow); }
+    50% { border-color: var(--scouting-orange); }
+}
+
+#info {
+    animation: scoutingPulse 3s ease-in-out infinite;
+}
